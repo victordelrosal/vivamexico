@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24 Razones de Orgullo Mexicano</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'%3E%3Ctext y='50%' x='50%' dominant-baseline='middle' text-anchor='middle' font-size='60'%3E🇲🇽%3C/text%3E%3C/svg%3E"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #006847 0%, #CE1126 50%, #006847 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.05) 35px, rgba(255,255,255,0.05) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(0,0,0,0.03) 35px, rgba(0,0,0,0.03) 70px);
+            pointer-events: none;
+            animation: backgroundMove 20s linear infinite;
+        }
+        
+        @keyframes backgroundMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(70px); }
+        }
+        
+        .flag-header {
+            background: linear-gradient(90deg, #006847 33.33%, white 33.33% 66.66%, #CE1126 66.66%);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1000;
+        }
+        
+        .flag-header::after {
+            content: '🦅';
+            position: absolute;
+            font-size: 60px;
+            animation: eagleFly 15s ease-in-out infinite;
+        }
+        
+        @keyframes eagleFly {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(-5deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3.5em;
+            color: white;
+            text-shadow: 
+                3px 3px 0 #CE1126,
+                -3px -3px 0 #006847,
+                3px -3px 0 #CE1126,
+                -3px 3px 0 #006847,
+                4px 4px 8px rgba(0,0,0,0.5);
+            z-index: 10;
+            position: relative;
+            animation: titlePulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .intro {
+            text-align: center;
+            color: white;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: cardEntry 0.6s ease-out backwards;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #006847, #CE1126, #006847);
+            background-size: 200% 100%;
+            animation: colorWave 3s linear infinite;
+        }
+        
+        @keyframes colorWave {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
+        }
+        
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border-color: #CE1126;
+        }
+        
+        .card:nth-child(odd):hover {
+            border-color: #006847;
+        }
+
+        /* 3X proportional scale on hover without fullscreen takeover */
+        .card { transform-origin: center center; transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .card:hover {
+            transform: scale(2);
+            z-index: 1100; /* appear above neighbors */
+            box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+        }
+        .card:hover .card-number { animation: none; }
+
+        
+        @keyframes cardEntry {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+        
+        .card-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #006847, #CE1126);
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            animation: numberRotate 3s ease-in-out infinite;
+        }
+        
+        @keyframes numberRotate {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(360deg); }
+        }
+        
+        .card:hover .card-number {
+            animation-duration: 0.5s;
+        }
+        
+        .card-title {
+            display: inline-block;
+            font-size: 1.1em;
+            font-weight: 800;
+            color: #006847;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .card:nth-child(odd) .card-title {
+            color: #CE1126;
+        }
+        
+        .card-content {
+            color: #333;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+        
+        .emoji {
+            font-size: 1.5em;
+            display: inline-block;
+            animation: emojiDance 2s ease-in-out infinite;
+            margin-left: 10px;
+        }
+        
+        @keyframes emojiDance {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-10deg) scale(1.1); }
+            75% { transform: rotate(10deg) scale(1.1); }
+        }
+        
+        .finale {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .finale::before {
+            content: '🇲🇽';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: flagWave 4s ease-in-out infinite;
+        }
+        
+        @keyframes flagWave {
+            0%, 100% { transform: translate(-50%, -50%) rotate(-5deg); }
+            50% { transform: translate(-50%, -50%) rotate(5deg); }
+        }
+        
+        .finale h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3em;
+            background: linear-gradient(90deg, #006847, #CE1126, #006847);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShine 3s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes textShine {
+            to { background-position: 200% center; }
+        }
+        
+        .finale-text {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .finale-text strong {
+            color: #CE1126;
+            font-size: 1.2em;
+        }
+        
+        .viva {
+            display: block;
+            font-size: 2em;
+            margin-top: 20px;
+            font-weight: 800;
+            animation: vivaJump 1s ease-in-out infinite;
+        }
+        
+        @keyframes vivaJump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Floating decorative elements */
+        .floating-emoji {
+            position: fixed;
+            font-size: 30px;
+            opacity: 0.3;
+            animation: float 10s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 1200;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-100px) rotate(120deg); }
+            66% { transform: translateY(50px) rotate(240deg); }
+        }
+        
+        .floating-emoji:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-emoji:nth-child(2) { top: 20%; right: 10%; animation-delay: 2s; }
+        .floating-emoji:nth-child(3) { bottom: 30%; left: 5%; animation-delay: 4s; }
+        .floating-emoji:nth-child(4) { bottom: 10%; right: 15%; animation-delay: 6s; }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .grid { grid-template-columns: 1fr; }
+            .finale h2 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating decorative elements -->
+    <div class="floating-emoji">🌮</div>
+    <div class="floating-emoji">🎸</div>
+    <div class="floating-emoji">🌶️</div>
+    <div class="floating-emoji">💀</div>
+    
+    <div class="flag-header">
+        <h1>24 RAZONES DE ORGULLO MEXICANO</h1>
+    </div>
+    
+    <div class="container">
+        <p class="intro">¡Porque ser mexicano es llevar el corazón tricolor! 🇲🇽</p>
+        
+        <div class="grid">
+            <div class="card">
+                <span class="card-number">1</span>
+                <span class="card-title">Nuestra riqueza cultural milenaria</span>
+                <span class="emoji">🏛️</span>
+                <div class="card-content">
+                    Somos herederos de grandes civilizaciones como los mayas, aztecas, olmecas y zapotecas que construyeron pirámides, desarrollaron calendarios precisos y crearon sistemas de escritura cuando Europa aún estaba en la Edad Media.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">2</span>
+                <span class="card-title">La calidez humana incomparable</span>
+                <span class="emoji">🤗</span>
+                <div class="card-content">
+                    Los mexicanos recibimos a todos con los brazos abiertos, una sonrisa genuina y un "¿ya comiste?" que sale del corazón. Nuestra hospitalidad es legendaria en el mundo entero.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">3</span>
+                <span class="card-title">La gastronomía patrimonio de la humanidad</span>
+                <span class="emoji">🌮</span>
+                <div class="card-content">
+                    Desde los tacos al pastor hasta el mole negro oaxaqueño, nuestra cocina es tan diversa que podrías comer algo diferente cada día del año. El maíz, el chile y el frijol son nuestra santísima trinidad culinaria.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">4</span>
+                <span class="card-title">El español más rico y expresivo</span>
+                <span class="emoji">😄</span>
+                <div class="card-content">
+                    Hablamos con diminutivos cariñosos, albures ingeniosos y modismos que pintan el mundo de colores. Un "ahorita" puede significar muchas cosas y todos lo entendemos perfectamente.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">5</span>
+                <span class="card-title">Las tradiciones que nos conectan con nuestros ancestros</span>
+                <span class="emoji">💀</span>
+                <div class="card-content">
+                    El Día de Muertos no es tristeza sino celebración, donde honramos a quienes se adelantaron con flores de cempasúchil, pan de muerto y sus platillos favoritos.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">6</span>
+                <span class="card-title">La resiliencia inquebrantable</span>
+                <span class="emoji">💪</span>
+                <div class="card-content">
+                    Terremotos, crisis económicas, huracanes... los mexicanos siempre nos levantamos, nos sacudimos el polvo y seguimos adelante con una sonrisa y un "no pasa nada".
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">7</span>
+                <span class="card-title">El mariachi y la música que toca el alma</span>
+                <span class="emoji">🎺</span>
+                <div class="card-content">
+                    Desde "Cielito Lindo" hasta los corridos modernos, nuestra música cuenta historias de amor, desamor, valentía y vida. Vicente Fernández será eterno en nuestros corazones.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">8</span>
+                <span class="card-title">La familia como núcleo sagrado</span>
+                <span class="emoji">👨‍👩‍👧‍👦</span>
+                <div class="card-content">
+                    Las comidas dominicales en casa de la abuela, los primos que son como hermanos, y esa red de apoyo incondicional que nunca te deja caer.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">9</span>
+                <span class="card-title">El ingenio y creatividad mexicana</span>
+                <span class="emoji">🔧</span>
+                <div class="card-content">
+                    Somos maestros de la innovación y podemos resolver cualquier problema con creatividad, ingenio y mucha imaginación. Si no existe la solución, la inventamos.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">10</span>
+                <span class="card-title">Las artesanías que son arte puro</span>
+                <span class="emoji">🎨</span>
+                <div class="card-content">
+                    Alebrijes, talavera, barro negro, textiles bordados a mano... cada pieza cuenta una historia y lleva el alma del artesano que la creó.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">11</span>
+                <span class="card-title">La biodiversidad asombrosa</span>
+                <span class="emoji">🦋</span>
+                <div class="card-content">
+                    Desde las mariposas monarca en Michoacán hasta las ballenas grises en Baja California, México es megadiverso con selvas, desiertos, bosques y mares.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">12</span>
+                <span class="card-title">El sentido del humor único</span>
+                <span class="emoji">😂</span>
+                <div class="card-content">
+                    Nos reímos de todo, especialmente de nosotros mismos. Los memes mexicanos conquistaron el internet porque encontramos humor hasta en las situaciones más difíciles.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">13</span>
+                <span class="card-title">Los mercados llenos de vida</span>
+                <span class="emoji">🥑</span>
+                <div class="card-content">
+                    El regateo amistoso, los olores a cilantro y epazote, las marchantes que te regalan "el pilón"... los mercados son el corazón palpitante de nuestras comunidades.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">14</span>
+                <span class="card-title">La solidaridad en momentos difíciles</span>
+                <span class="emoji">🤝</span>
+                <div class="card-content">
+                    Cuando tiembla, todos salimos a ayudar. Cuando alguien necesita, hacemos colecta. El mexicano no pregunta si puede ayudar, simplemente lo hace.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">15</span>
+                <span class="card-title">Los paisajes que quitan el aliento</span>
+                <span class="emoji">🏖️</span>
+                <div class="card-content">
+                    Las Barrancas del Cobre, Hierve el Agua, los cenotes de Yucatán, las playas de Oaxaca... México tiene rincones que parecen sacados de sueños.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">16</span>
+                <span class="card-title">El tequila y el mezcal</span>
+                <span class="emoji">🥃</span>
+                <div class="card-content">
+                    Bebidas que conquistaron el mundo, hechas con paciencia, tradición y el agave que crece en nuestra tierra generosa.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">17</span>
+                <span class="card-title">Los escritores que iluminaron el mundo</span>
+                <span class="emoji">📚</span>
+                <div class="card-content">
+                    Octavio Paz, Carlos Fuentes, Juan Rulfo, Sor Juana Inés de la Cruz... voces mexicanas que son patrimonio universal de las letras.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">18</span>
+                <span class="card-title">El fútbol que nos une</span>
+                <span class="emoji">⚽</span>
+                <div class="card-content">
+                    Aunque suframos con la selección, el "¡Sí se puede!" nunca muere. Y cuando anotamos, el grito de "¡Goooool!" se escucha hasta en el cielo.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">19</span>
+                <span class="card-title">Las posadas, piñatas y tradiciones navideñas</span>
+                <span class="emoji">✨</span>
+                <div class="card-content">
+                    Los ponches calientitos, los aguinaldos, el "no quiero oro, ni quiero plata"... diciembre en México es pura magia.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">20</span>
+                <span class="card-title">El arte que conquistó el mundo</span>
+                <span class="emoji">🎭</span>
+                <div class="card-content">
+                    Frida Kahlo, Diego Rivera, Remedios Varo, José Clemente Orozco... nuestros artistas plasmaron el alma mexicana en lienzos inmortales.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">21</span>
+                <span class="card-title">La charrería y nuestras tradiciones ecuestres</span>
+                <span class="emoji">🐴</span>
+                <div class="card-content">
+                    El deporte nacional que combina destreza, valentía y elegancia, donde el mariachi acompaña las suertes charras.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">22</span>
+                <span class="card-title">Los sabores únicos</span>
+                <span class="emoji">🌶️</span>
+                <div class="card-content">
+                    El picante que no es castigo sino sabor, la lima en todo, el chamoy, el pulque, las aguas frescas... sabores que no encuentras en ningún otro lugar.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">23</span>
+                <span class="card-title">La esperanza inquebrantable</span>
+                <span class="emoji">🌅</span>
+                <div class="card-content">
+                    Por más difícil que esté la situación, el mexicano siempre cree que "mañana será mejor" y trabaja duro para lograrlo.
+                </div>
+            </div>
+            
+            <div class="card">
+                <span class="card-number">24</span>
+                <span class="card-title">El orgullo de decir "¡Soy mexicano!"</span>
+                <span class="emoji">❤️</span>
+                <div class="card-content">
+                    Donde sea que estemos en el mundo, llevamos a México en el corazón, en la piel, en cada palabra. Somos embajadores de nuestra cultura hermosa y la compartimos con alegría.
+                </div>
+            </div>
+        </div>
+        
+        <div class="finale">
+            <h2>¡VIVA MÉXICO, CABRONES!</h2>
+            <p class="finale-text">
+                Porque ser mexicano no es solo nacer en esta tierra bendita, es llevar en el alma los colores <strong>verde</strong>, <strong>blanco</strong> y <strong>rojo</strong>; es sentir que la sangre hierve con el himno nacional; es saber que no importa dónde estemos, México vive en nosotros.
+                <span class="viva">¡Órale! ¡Qué viva México! 🎉🇲🇽</span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
